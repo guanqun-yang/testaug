@@ -59,16 +59,16 @@ Now we are ready to use the TestAug system:
   ```
   
 - Step 5: Filter out the invalid cases if the ratio of valid cases exceeds predefined threshold (Step 2).
-	  
+	
   ```bash
   python pipeline/05_filter.py --task sentiment
   ```
   
 - Step 6: Test the classifiers in question with the augmented test suite provided by TestAug. Note that `--seed 42` here is related to the test suites evaluation mentioned in the paper; it could be set to a different value for a more complete comparison.
-	  
+	
   ```bash
   python pipeline/06_test.py --task sentiment --seed 42
-	  ```
+  ```
   
   By default, the TestAug tests the following 4 models; all of them have shown [decent accuracies](https://textattack.readthedocs.io/en/latest/3recipes/models.html) on the original validation set. Additional models could be easily incorporated if they appear on the [HuggingFace model hub](https://huggingface.co/models).
   
