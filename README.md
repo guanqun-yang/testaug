@@ -7,7 +7,7 @@ The following will demonstrate how TestAug is applied to testing a sentiment cla
 
 1. The [computation environment](#environment) is properly set up.
 
-2. You have a valid access key to GPT-3 and it could be accessed from `~/.bashrc` as something look like below. You could still experience our system **without** this key by going to Step 5 directly as a sample of queried dataset is provided.
+2. You have a valid access key to GPT-3 and it could be accessed from `~/.bashrc` as something look like below. You could still experience our system **without** this key by going to Step 5 directly as a sample of the queried dataset is provided.
 
    ```bash
    export OPENAI_API_KEY="XYZ"
@@ -34,7 +34,7 @@ Now we are ready to use the TestAug system:
 - Step 2: Inspect the labeled data in `data/labeling/003/` to see if the ratio of valid sentences $\tau$ is above the predefined threshold (in our project, this threshold is set to 90%). 
 
   - If $\tau \geq 90\%$, directly proceed to Step 4 without stepping into Step 3.
-  - if $\tau < 90\%$, repeat Step 1 as following, where `--phase2` will query a training set to train a `roberta-base` classifier to filter out the invalid sentences. Proceed to Step 3 after this step.
+  - if $\tau < 90\%$, repeat Step 1 as follows, where `--phase2` will query a training set to train a `roberta-base` classifier to filter out the invalid sentences. Proceed to Step 3 after this step.
 
   In our case, we do need to go through this additional step as the ratio is below 90%.
 
@@ -58,7 +58,7 @@ Now we are ready to use the TestAug system:
   python pipeline/04_query.py --task sentiment --description 3
   ```
   
-- Step 5: Filter out the invalid cases if the ratio of valid cases exceeds predefined threshold (Step 2).
+- Step 5: Filter out the invalid cases if the ratio of valid cases exceeds the predefined threshold (Step 2).
 	
   ```bash
   python pipeline/05_filter.py --task sentiment
@@ -87,7 +87,7 @@ Now we are ready to use the TestAug system:
 
 ## Reproducing Experiments
 
-With all three tasks' test suites available, the Table 3 could be reproduced following the steps below.
+With all three tasks' test suites available, Table 3 could be reproduced following the steps below.
 
 - Step 1: Run the `reproduce.sh` script below:
 
