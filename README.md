@@ -15,6 +15,8 @@ The following will demonstrate how TestAug is applied to testing a sentiment cla
 
 Now we are ready to use the TestAug system:
 
+- Step 0: Clone the repository and make sure the paths in the `setting/setting.py` are set correctly.
+
 - Step 1: Query and annotate the sentences based on seed sentences from the CheckList test suite. 
 
   - The `--description 3` specifies one concrete case of negation in the CheckList test suite:
